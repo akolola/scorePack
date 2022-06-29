@@ -7,9 +7,6 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-
-
-
   @override
   State<StatefulWidget> createState() {
     return _MyAppState();
@@ -18,7 +15,6 @@ class MyApp extends StatefulWidget {
 
 
 class _MyAppState extends State<MyApp>{
-
   final questions = const [
     {
       'questionText': 'Whats your fav color?',
@@ -34,21 +30,19 @@ class _MyAppState extends State<MyApp>{
     }
   ];
 
-
   var _questionIndex = 0;
 
   void _answerQuestion(){
-
-    if(_questionIndex < questions.length){
-
-    }
-
     setState(() {
       _questionIndex++;
     });
     print(_questionIndex);
-
-
+    if(_questionIndex < questions.length){
+      print('We have more questions.');
+    }
+    else {
+      print('No have more questions.');
+    }
   }
 
   // This widget is the root of  app.
@@ -59,7 +53,7 @@ class _MyAppState extends State<MyApp>{
         appBar: AppBar(
           title : Text('Score Pack')
         ),
-        body: Column(
+        body: _questionIndex < questions.length ? Column(
           children: [
             Question(
                 questions[_questionIndex]['questionText'] as String
@@ -68,6 +62,8 @@ class _MyAppState extends State<MyApp>{
                  return Answer(_answerQuestion, answer);
             }).toList()
           ],
+        ) : Center(
+          child: Text('You did it.'),
         ),
       )
     );
