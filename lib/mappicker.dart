@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
 class MapPicker extends StatelessWidget {
-
   const MapPicker({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -61,8 +59,5 @@ class MapPicker extends StatelessWidget {
         ),
       ),
     );
-
   }
-
 }
-

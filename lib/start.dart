@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:hackaburg/mappicker.dart';
 
-
 class Start extends StatelessWidget {
-
   const Start({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-    return  Column(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         const Text(
           'Choose new activity',
@@ -17,23 +15,23 @@ class Start extends StatelessWidget {
         ButtonBar(
           alignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            OutlinedButton(
-              onPressed: null,
-              child: const Text('Stadium track'),
-            ),
-            OutlinedButton(
-            onPressed: () {
-                  Navigator.push(
+            IconButton(
+                icon: Image.asset('images/field.png'),
+                iconSize: 100,
+                onPressed: () {}),
+            IconButton(
+              icon: Image.asset('images/buildings.png'),
+              iconSize: 100,
+              onPressed: () {
+                Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => MapPicker()),
-                  );
-                },
-              child: Text('City maps'),
+                );
+              },
             )
           ],
         ),
       ],
     );
   }
-
 }
