@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hackaburg/mappicker.dart';
+import 'package:hackaburg/map.dart';
 
 class Start extends StatelessWidget {
   const Start({super.key});
@@ -36,7 +36,7 @@ class Start extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MapPicker()),
+                  MaterialPageRoute(builder: (context) => Map()),
                 );
               },
             )

@@ -7,13 +7,13 @@ class MapPicker extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text(
+          'Jogging Maps',
+        ),
         leading: IconButton(
           tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
           icon: const Icon(Icons.menu),
           onPressed: () {},
-        ),
-        title: Text(
-          'Jogging Maps',
         ),
         actions: [
           IconButton(
